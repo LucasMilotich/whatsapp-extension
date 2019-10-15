@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "name": "WithoutContact",
+    "description": "Enviar whatsapp sin haber agregado el contacto",
+    "version": "1.0",
+
+    "browser_action": {
+        
+        "default_popup": "popup.html"
+    },
+    "background": {
+
+        "persistant": false
+    },
+    "icons": { "16": "icon16.png",
+           
+          "128": "icon128.png" },
+
+    "permissions": [
+        "activeTab",
+        "<all_urls>",
+        "https://api.whatsapp.com",
+        "tabs"
+    ],
+
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["content.js"]
+        }
+    ]
+}
